@@ -37,7 +37,7 @@ function handleRickAndMorty(json) {
                     <h4 class="name">${result.name}</h4>
                     <p>Type: ${result.type}</p>    
                     <p>Episode count: ${result.episode}</p>                                  
-               <a class="btn btn-primary" href="details.html?id=${result.id}">Details</a>
+               <a class="btn btn-primary" href="details.html?id=1234${result.id}">Details</a>
            </div>
        </div>
    </div>`;
