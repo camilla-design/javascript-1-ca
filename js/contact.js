@@ -5,29 +5,17 @@ form.addEventListener("submit", validateForm);
 
 function validateForm(event) {
     event.preventDefault();
-    console.log("This form is submitted");
-}
 
     const firstName = document.querySelector("#firstName");
     const firstNameError = document.querySelector("#firstNameError");
     const firstNameValue = firstName.value;
 
-    if(checkInput(firstNameValue) === true) {
+    if(checkInput(firstNameValue)) {
         firstNameError.style.display = "none";
     } else {
         firstNameError.style.display = "block";
     }
 
-
-function checkInput(value) {
-    const trimmedValue = value.trim();
-
-    if(trimmedValue.length > 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 // LASTNAME
 
@@ -35,21 +23,12 @@ const lastName = document.querySelector("#lastName");
 const lastNameError = document.querySelector("#lastNameError");
 const lastNameValue = lastName.value;
 
-if(checkInput(lastNameValue) === true) {
+if(checkInput(lastNameValue)) {
     lastNameError.style.display = "none";
 } else {
     lastNameError.style.display = "block";
 }
 
-function checkInput(lastNameValue) {
-    const trimmedLastNameValue = lastNameValue.trim();
-
-    if(trimmedLastNameValue.length > 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 // EMAIL
 const email = document.querySelector("#email");
@@ -89,4 +68,15 @@ function checkInput(messageValue) {
     } else {
         return false;
     }
+}
+
+function checkInput(value) {
+    const trimmedValue = value.trim();
+
+    if(trimmedValue.length > 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
 }
