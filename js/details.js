@@ -48,3 +48,4 @@ fetch(detailsUrl)
         const location = document.querySelector("#location");
         location.innerHTML = json.location.name;
     }
+    
