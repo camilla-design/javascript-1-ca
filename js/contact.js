@@ -63,7 +63,7 @@ if(checkInput(messageValue)) {
 function checkInput(messageValue) {
     const trimmedMessage = messageValue.trim();
 
-    if(trimmedMessage.length > 10) {
+    if(trimmedMessage.length > 10) { // this can be simplified into a one liner:  return trimmedValue.length > 2
         return true;
     } else {
         return false;
@@ -73,7 +73,7 @@ function checkInput(messageValue) {
 function checkInput(value) {
     const trimmedValue = value.trim();
 
-    if(trimmedValue.length > 2) {
+    if(trimmedValue.length > 2) { // this can be simplified into a one liner:  return trimmedValue.length > 2
         return true;
     } else {
         return false;
