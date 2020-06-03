@@ -14,38 +14,34 @@ const baseUrl = `https://rickandmortyapi.com/api/character/`;
 const detailsUrl = `${baseUrl}${id}`;
 
 fetch(detailsUrl)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(json) {
-        createDetails(json);
-    })
-    .catch(function() {
-        document.location.href = "error.html";
-    });
+    .then((response) => response.json())
+    .then((json) => characterDetails(json))
+    .catch(() => {document.location.href = "error.html"});
 
-    function createDetails(json) {
-        console.dir(json);
-
-        document.title = json.name;
+    function characterDetails(character) {
+        console.dir(character);
+        
+        document.title = character.name;
 
         const image = document.querySelector(".details-image");
-        image.src = json.image;
-        image.alt = json.name;
+        image.src = character.image;
+        image.alt = character.name;
 
         const name = document.querySelector("h1");
-        name.innerHTML = json.name;
+        name.innerHTML = character.name;
 
         const status = document.querySelector("#status");
-        status.innerHTML = json.status;
+        status.innerHTML = character.status;
 
         const species = document.querySelector("#species");
-        species.innerHTML = json.species;
+        species.innerHTML = character.species;
 
         const origin = document.querySelector("#origin");
-        origin.innerHTML = json.origin.name;
+        origin.innerHTML = character.origin.name;
 
         const location = document.querySelector("#location");
-        location.innerHTML = json.location.name;
+        location.innerHTML = character.location.name;
+
     }
     
+   
